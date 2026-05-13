@@ -35,7 +35,7 @@ class TrackingActivity : AppCompatActivity() {
             ContextCompat.startForegroundService(this, intent)
         }
 
-        binding.stopBtn.setOnClickListener { onStop() }
+        binding.stopBtn.setOnClickListener { stopAndSaveRun() }
 
         // Disabilita il back fisico per evitare uscite accidentali durante la corsa
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
@@ -57,7 +57,7 @@ class TrackingActivity : AppCompatActivity() {
         }
     }
 
-    private fun onStop() {
+    private fun stopAndSaveRun() {
         // Salva e mostra recap
         val tracker = LocationTrackingService.tracker
         val pts = tracker.trackPoints
