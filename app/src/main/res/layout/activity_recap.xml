@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/run_recap"
+            android:textColor="@color/neon_red"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:fontFamily="sans-serif-condensed"/>
+
+        <View
+            android:layout_width="60dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/neon_orange"/>
+
+        <TextView
+            android:id="@+id/recapDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"/>
+
+        <!-- Mappa -->
+        <org.osmdroid.views.MapView
+            android:id="@+id/recapMap"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_panel"/>
+
+        <!-- Grafico altimetrico -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="ELEVATION PROFILE"
+            android:textColor="@color/neon_orange"
+            android:textSize="11sp"
+            android:letterSpacing="0.3"
+            android:textStyle="bold"/>
+
+        <com.mountainrush.app.ui.ElevationChartView
+            android:id="@+id/elevationChart"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_panel"/>
+
+        <!-- Big numbers row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_panel_accent"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView style="@style/StatLabel" android:text="@string/max_speed"/>
+                <TextView
+                    android:id="@+id/recapMaxSpeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:textColor="@color/neon_red"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kmh"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/grid_line"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView style="@style/StatLabel" android:text="@string/distance"/>
+                <TextView
+                    android:id="@+id/recapDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.00"
+                    android:textColor="@color/neon_orange"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/km"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Grid stats -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:columnCount="2"
+            android:rowCount="3">
+
+            <LinearLayout style="@style/StatCell" android:layout_columnWeight="1">
+                <TextView style="@style/StatLabel" android:text="@string/time"/>
+                <TextView android:id="@+id/recapTime" style="@style/StatValue" android:text="00:00"/>
+            </LinearLayout>
+
+            <LinearLayout style="@style/StatCell" android:layout_columnWeight="1">
+                <TextView style="@style/StatLabel" android:text="@string/avg_speed"/>
+                <TextView android:id="@+id/recapAvgSpeed" style="@style/StatValue" android:text="0.0"/>
+            </LinearLayout>
+
+            <LinearLayout style="@style/StatCell" android:layout_columnWeight="1">
+                <TextView style="@style/StatLabel" android:text="@string/elevation_gain"/>
+                <TextView android:id="@+id/recapGain" style="@style/StatValue" android:text="0 m"/>
+            </LinearLayout>
+
+            <LinearLayout style="@style/StatCell" android:layout_columnWeight="1">
+                <TextView style="@style/StatLabel" android:text="@string/elevation_loss"/>
+                <TextView android:id="@+id/recapLoss" style="@style/StatValue" android:text="0 m"/>
+            </LinearLayout>
+
+            <LinearLayout style="@style/StatCell" android:layout_columnWeight="1">
+                <TextView style="@style/StatLabel" android:text="@string/max_altitude"/>
+                <TextView android:id="@+id/recapPeak" style="@style/StatValue" android:text="0 m"/>
+            </LinearLayout>
+
+            <LinearLayout style="@style/StatCell" android:layout_columnWeight="1">
+                <TextView style="@style/StatLabel" android:text="@string/turns"/>
+                <TextView android:id="@+id/recapTurns" style="@style/StatValue" android:text="0"/>
+            </LinearLayout>
+        </GridLayout>
+
+        <Button
+            android:id="@+id/exportBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btn_outline"
+            android:text="@string/export_gpx"
+            android:textColor="@color/neon_orange"
+            android:textStyle="bold"
+            android:letterSpacing="0.15"/>
+
+        <Button
+            android:id="@+id/doneBtn"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/btn_start"
+            android:text="DONE"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.2"/>
+
+    </LinearLayout>
+</ScrollView>

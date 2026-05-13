@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MOUNTAIN RUSH</string>
+    <string name="tagline">PASS HUNTER · RACING TELEMETRY</string>
+    <string name="start_run">START RUN</string>
+    <string name="stop_run">STOP</string>
+    <string name="history">HISTORY</string>
+    <string name="speed">SPEED</string>
+    <string name="max_speed">TOP SPEED</string>
+    <string name="avg_speed">AVG SPEED</string>
+    <string name="time">TIME</string>
+    <string name="distance">DISTANCE</string>
+    <string name="elevation_gain">ELEV GAIN</string>
+    <string name="elevation_loss">ELEV LOSS</string>
+    <string name="max_altitude">PEAK</string>
+    <string name="turns">TURNS</string>
+    <string name="kmh">km/h</string>
+    <string name="km">km</string>
+    <string name="m">m</string>
+    <string name="run_recap">RUN RECAP</string>
+    <string name="no_runs">No runs yet. Hit START and conquer some passes.</string>
+    <string name="grant_permissions">Grant location permission to start tracking</string>
+    <string name="notification_channel">Tracking</string>
+    <string name="notification_text">Recording your run</string>
+    <string name="export_gpx">EXPORT GPX</string>
+    <string name="delete">DELETE</string>
+</resources>

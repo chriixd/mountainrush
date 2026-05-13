@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_dark">#0A0A0F</color>
+    <color name="bg_panel">#14141C</color>
+    <color name="bg_panel_light">#1E1E28</color>
+    <color name="neon_red">#FF1F3D</color>
+    <color name="neon_orange">#FF6B1F</color>
+    <color name="neon_yellow">#FFD93D</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#A0A0B0</color>
+    <color name="text_dim">#606070</color>
+    <color name="grid_line">#2A2A38</color>
+    <color name="success_green">#00FF88</color>
+</resources>
