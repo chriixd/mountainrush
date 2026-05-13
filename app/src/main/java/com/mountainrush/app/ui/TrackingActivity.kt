@@ -100,6 +100,4 @@ class TrackingActivity : AppCompatActivity() {
         }
         startService(intent)
     }
-
-    @Suppress("DEPRECATION", "OVERRIDE_DEPRECATION")
 }
